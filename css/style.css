@@ -99,7 +99,7 @@ body {
 .telegram .window .window-icon .minimize-window-icon::before {
   width: 12px;
   height: 10px;
-  border-bottom: 3px solid var(--icon-color);
+  border-bottom: 2px solid var(--icon-color);
 }
 
 .telegram .window .window-icon .full-screen-icon {
@@ -116,8 +116,8 @@ body {
 }
 
 .telegram .window .window-icon .full-screen-icon::before {
-  width: 5px;
-  height: 5px;
-  border: 3px solid var(--icon-color);
+  width: 6px;
+  height: 6px;
+  border: 2px solid var(--icon-color);
 }
 /*# sourceMappingURL=style.css.map */
