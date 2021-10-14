@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --main-text-color:#F5F5F5;
+  --window-bg-color:#242F3D;
+  --main-bg-color:#17212B;
+  --chat-bg-color:#0E1621;
+  --blue-color:#2B5278;
+  --blue-text-color:#73B9F5;
+  --gray-text-color:#708499;
+  --icon-color:#6C7883;
+  --hover-bg-color:#202B36;
+}
+
+::before, ::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--main-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.telegram {
+  min-width: 1200px;
+  min-height: 720px;
+  background: #222;
+  border-radius: 10px;
+}
+
+.telegram .window {
+  width: 100%;
+  height: 26px;
+  background: var(--window-bg-color);
+  border-radius: 10px 10px 0 0;
+}
+
+.telegram .window .window-icon {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  color: var(--icon-color);
+  align-items: center;
+}
+
+.telegram .window .window-icon .close-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 0 10px 0 0;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.telegram .window .window-icon .close-icon:hover {
+  background: red;
+}
+
+.telegram .window .window-icon .close-icon:hover svg {
+  fill: var(--main-text-color);
+}
+
+.telegram .window .window-icon .close-icon svg {
+  fill: var(--icon-color);
+}
+
+.telegram .window .window-icon .minimize-window-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.telegram .window .window-icon .minimize-window-icon:hover {
+  background: var(--hover-bg-color);
+}
+
+.telegram .window .window-icon .minimize-window-icon::before {
+  width: 12px;
+  height: 10px;
+  border-bottom: 3px solid var(--icon-color);
+}
+
+.telegram .window .window-icon .full-screen-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.telegram .window .window-icon .full-screen-icon:hover {
+  background: var(--hover-bg-color);
+}
+
+.telegram .window .window-icon .full-screen-icon::before {
+  width: 5px;
+  height: 5px;
+  border: 3px solid var(--icon-color);
+}
+/*# sourceMappingURL=style.css.map */
