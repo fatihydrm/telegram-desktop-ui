@@ -18,9 +18,21 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
         </div>
       </div>
-      <div class="chat-container">
-        <div class="sidebar"></div>
-        <div class="chat"></div>
+    </div>
+    <div class="chat-container">
+      <input type="radio" name="search-menu" id="search-icon">
+      <input type="radio" name="search-menu" id="close-menu">
+      <div class="sidebar">
+        <div class="search">
+          <label class="search-icon" for="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Menu</title><path d="M64 384h384v-42.67H64zm0-106.67h384v-42.66H64zM64 128v42.67h384V128z"/></svg>
+          </label>
+          <input class="search-bar" type="text" id="" placeholder="Search">
+          <div class="menu"></div>
+        </div>
+      </div>
+      <div class="chat">
+        <label class="close-menu" for="close-menu"></label>
       </div>
     </div>
   </div>
