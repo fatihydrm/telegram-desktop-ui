@@ -17,6 +17,7 @@
   --gray-text-color:#6F8091;
   --icon-color:#6C7883;
   --hover-bg-color:#202B36;
+  --menu-bg-color:#276899;
 }
 ::before,::after{
   content: '';
@@ -178,10 +179,11 @@ body{
           position: absolute;
           width: 100%;
           height: 100%;
-          background: royalblue;
+          background: var(--menu-bg-color);
           inset: 0;
           transform: translate(-308px,0);
           transition: .1s;
+          z-index: 1;
         }
       }
       .persons-container{
@@ -261,6 +263,7 @@ body{
         background: rgba(0,0,0,.2);
         position: absolute;
         display: none;
+        z-index: 1;
       }
     }
     input[type="radio"]{
