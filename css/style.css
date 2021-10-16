@@ -15,13 +15,13 @@
   --chat-bg-color:#0E1621;
   --blue-color:#2B5278;
   --blue-text-color:#73B9F5;
-  --gray-text-color:#708499;
+  --gray-text-color:#6F8091;
   --icon-color:#6C7883;
   --hover-bg-color:#202B36;
 }
 
 ::before, ::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
 }
@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Roboto,"sans-serif";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -49,14 +49,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 .telegram .window {
   width: 100%;
   height: 26px;
   background: var(--window-bg-color);
   border-radius: 10px 10px 0 0;
 }
-
 .telegram .window .window-icon {
   height: 100%;
   display: flex;
@@ -65,7 +63,6 @@ body {
   color: var(--icon-color);
   align-items: center;
 }
-
 .telegram .window .window-icon .close-icon {
   display: flex;
   justify-content: center;
@@ -76,19 +73,15 @@ body {
   cursor: pointer;
   position: relative;
 }
-
 .telegram .window .window-icon .close-icon:hover {
   background: red;
 }
-
 .telegram .window .window-icon .close-icon:hover svg {
   fill: var(--main-text-color);
 }
-
 .telegram .window .window-icon .close-icon svg {
   fill: var(--icon-color);
 }
-
 .telegram .window .window-icon .minimize-window-icon {
   width: 26px;
   height: 26px;
@@ -97,17 +90,14 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
 .telegram .window .window-icon .minimize-window-icon:hover {
   background: var(--hover-bg-color);
 }
-
 .telegram .window .window-icon .minimize-window-icon::before {
   width: 12px;
   height: 10px;
   border-bottom: 2px solid var(--icon-color);
 }
-
 .telegram .window .window-icon .full-screen-icon {
   width: 26px;
   height: 26px;
@@ -116,27 +106,19 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
 .telegram .window .window-icon .full-screen-icon:hover {
   background: var(--hover-bg-color);
 }
-
 .telegram .window .window-icon .full-screen-icon::before {
   width: 6px;
   height: 6px;
   border: 2px solid var(--icon-color);
 }
-
 .telegram .chat-container {
   width: 100%;
   height: 100%;
   display: flex;
 }
-
-.telegram .chat-container input[type="radio"] {
-  display: none;
-}
-
 .telegram .chat-container .sidebar {
   height: 100%;
   width: 308px;
@@ -145,8 +127,8 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 0 0 0 10px;
+  overflow: hidden;
 }
-
 .telegram .chat-container .sidebar .search {
   width: 100%;
   height: 60px;
@@ -155,7 +137,6 @@ body {
   align-items: center;
   padding: 0 14px 0 0;
 }
-
 .telegram .chat-container .sidebar .search .search-icon {
   width: 60px;
   height: 100%;
@@ -164,16 +145,13 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
 .telegram .chat-container .sidebar .search .search-icon:hover svg {
   fill: var(--main-text-color);
 }
-
 .telegram .chat-container .sidebar .search .search-icon svg {
   width: 30px;
   fill: var(--icon-color);
 }
-
 .telegram .chat-container .sidebar .search .search-bar {
   height: 34px;
   flex: 1;
@@ -185,22 +163,108 @@ body {
   color: var(--main-text-color);
   letter-spacing: 1px;
 }
-
 .telegram .chat-container .sidebar .search .search-bar::placeholder {
   transform: translate(2px, 1px);
   color: var(--icon-color);
-  opacity: .9;
+  opacity: 0.9;
   font-size: 14px;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
-
 .telegram .chat-container .sidebar .search .search-bar:focus::placeholder {
-  opacity: .7;
+  opacity: 0.7;
 }
-
+.telegram .chat-container .sidebar .search .menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: royalblue;
+  inset: 0;
+  transform: translate(-308px, 0);
+  transition: 0.1s;
+}
+.telegram .chat-container .sidebar .persons-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.telegram .chat-container .sidebar .persons-container .person-label {
+  background: var(--main-bg-color);
+  width: 100%;
+  height: 70px;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--main-text-color);
+  transition: 0.1s;
+  display: flex;
+  justify-content: space-between;
+}
+.telegram .chat-container .sidebar .persons-container .person-label:hover {
+  background: var(--hover-bg-color);
+}
+.telegram .chat-container .sidebar .persons-container .person-label img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container {
+  margin-left: 14px;
+  flex: 1;
+  color: var(--gray-text-color);
+  position: relative;
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container .name-time-container {
+  display: flex;
+  justify-content: space-between;
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container .name-time-container .person-name {
+  color: var(--main-text-color);
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container .name-time-container .last-time {
+  font-size: 13px;
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container .last-message-container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container .last-message-container .last-send {
+  display: inline;
+  margin-right: 4px;
+  color: var(--blue-text-color);
+}
+.telegram .chat-container .sidebar .persons-container .person-label .text-container .last-message-container .last-message {
+  display: inline-block;
+  white-space: nowrap;
+  width: 192px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .telegram .chat-container .chat {
   background: var(--chat-bg-color);
   flex: 1;
   border-radius: 0 0 10px 0;
+  position: relative;
 }
+.telegram .chat-container .chat .close-menu {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: none;
+}
+.telegram .chat-container input[type=radio] {
+  display: none;
+}
+.telegram .chat-container input[type=radio]:nth-of-type(10):checked + input[type=radio] + .sidebar > .search > .menu {
+  transform: translate(0, 0);
+}
+.telegram .chat-container input[type=radio]:nth-of-type(10):checked + input[type=radio] + .sidebar + .chat > .close-menu {
+  display: inline-block;
+}
+
 /*# sourceMappingURL=style.css.map */
