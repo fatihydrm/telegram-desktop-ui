@@ -98,9 +98,12 @@ body {
 }
 
 .telegram .window .window-icon .minimize-window-icon::before {
+  content: '';
+  display: block;
   width: 12px;
   height: 10px;
-  border-bottom: 2px solid var(--icon-color);
+  border-bottom: 3px solid var(--icon-color);
+  position: absolute;
 }
 
 .telegram .window .window-icon .full-screen-icon {
@@ -117,9 +120,12 @@ body {
 }
 
 .telegram .window .window-icon .full-screen-icon::before {
-  width: 6px;
-  height: 6px;
-  border: 2px solid var(--icon-color);
+  width: 5px;
+  height: 5px;
+  border: 3px solid var(--icon-color);
+  content: '';
+  display: block;
+  position: absolute;
 }
 
 .telegram .chat-container {
@@ -191,15 +197,153 @@ body {
   opacity: .7;
 }
 
+.telegram .chat-container .sidebar .search input[type="checkbox"] {
+  display: none;
+}
+
 .telegram .chat-container .sidebar .search .menu {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: var(--menu-bg-color);
+  background: var(--main-bg-color);
   inset: 0;
   transform: translate(-308px, 0);
   transition: .1s;
   z-index: 1;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile {
+  width: 100%;
+  height: 150px;
+  background: var(--menu-bg-color);
+  position: relative;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .photo-saved-message {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .photo-saved-message label {
+  cursor: pointer;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .photo-saved-message label img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .photo-saved-message .saved-icon {
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue-color);
+  font-size: 18px;
+  color: var(--main-text-color);
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .profile-name-and-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px 0 30px;
+  color: var(--main-text-color);
+  cursor: pointer;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .profile-name-and-number .name-number .profile-name {
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .5px;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .profile-name-and-number .name-number .profile-number {
+  font-size: 14px;
+}
+
+.telegram .chat-container .sidebar .search .menu .profile .profile-name-and-number .arrow-icon {
+  width: 30px;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .active-account {
+  display: flex;
+  padding: 8px 25px 2px 25px;
+  cursor: pointer;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .active-account:hover {
+  background: var(--hover-bg-color);
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .active-account .img {
+  position: relative;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .active-account .img img {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .active-account .img .icon {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--menu-bg-color);
+  color: var(--main-text-color);
+  font-size: 11px;
+  border-radius: 50%;
+  border: 3px solid var(--main-bg-color);
+  transform: translate(24px, 18px);
+  padding-top: 4px;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .active-account .active-account-name {
+  margin-left: 20px;
+  font-weight: 400;
+  color: var(--main-text-color);
+  line-height: 2.5;
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .add-account-button {
+  display: flex;
+  padding: 10px 25px 6px 28px;
+  cursor: pointer;
+  color: var(--main-text-color);
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .add-account-button:hover {
+  background: var(--hover-bg-color);
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .add-account-button .person-icon svg {
+  width: 32px;
+  fill: var(--icon-color);
+}
+
+.telegram .chat-container .sidebar .search .menu .add-account-menu .add-account-button span {
+  line-height: 2;
+  margin-left: 26px;
+  font-weight: 400;
 }
 
 .telegram .chat-container .sidebar .persons-container {
